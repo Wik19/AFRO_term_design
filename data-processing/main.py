@@ -6,15 +6,14 @@ import matplotlib.pyplot as plt
 from collections import deque
 from scipy.signal import butter, lfilter
 from scipy.fft import fft, fftfreq
-import threading # To run data collection in a separate thread
+import threading
 
 # --- Configuration ---
-# !!! IMPORTANT: Replace with the actual IP address of your ESP32 !!!
 SERVER_IP = "192.168.11.42"
 SERVER_PORT = 8080
 LISTEN_DURATION_SECONDS = 5
 I2S_SAMPLE_RATE = 16000
-MIC_AUDIO_CHUNK_SAMPLES = 256 # Must match ESP32 code
+MIC_AUDIO_CHUNK_SAMPLES = 256
 NORMALIZE_AUDIO = True
 
 # Audio Filter Configuration
