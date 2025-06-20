@@ -4,11 +4,11 @@
 #include <SPI.h>
 #include "driver/i2s.h"
 #include <vector>
-#include <cstring> // For memcpy
+#include <cstring>
 
 // --- Wi-Fi Configuration ---
-const char *ssid = "incandescent_spot";
-const char *password = "987654321";
+const char *ssid = "LAPTOP-49D1CUOP 8227";
+const char *password = "4<q984E8";
 const uint16_t serverPort = 8080;
 
 // --- Sensor Pin Definitions ---
@@ -21,219 +21,281 @@ const uint16_t serverPort = 8080;
 #define I2S_MIC_WORD_SELECT_PIN 9
 #define I2S_MIC_SERIAL_DATA_PIN 8
 
+// --- Interrupt Pin Definition ---
+#define IMU_INT_PIN 3 
+volatile bool imuDataReady = false;
+
 // --- Sensor Configuration ---
 #define IMU_ODR LSM6DS_RATE_416_HZ
 #define I2S_SAMPLE_RATE 16000
 #define I2S_BITS_PER_SAMPLE I2S_BITS_PER_SAMPLE_32BIT
 #define I2S_PORT_NUM I2S_NUM_0
-#define MIC_AUDIO_CHUNK_SAMPLES 256 // Number of int32_t samples per audio packet
+#define MIC_AUDIO_CHUNK_SAMPLES 256
 
 // --- Application State & Buffering Configuration ---
 enum AppState {
-    WAITING_FOR_CLIENT,
-    RECORDING,
-    SENDING_DATA
+    AWAITING_CONNECTION,
+    AWAITING_COMMAND,
+    STREAMING_IMU,
+    STREAMING_AUDIO
 };
-AppState currentState = WAITING_FOR_CLIENT;
+AppState currentState = AWAITING_CONNECTION;
 
-const size_t TARGET_AUDIO_PACKETS = 100; // Number of combined audio data packets to collect
+const size_t TARGET_IMU_PACKETS = 3*416;
+
+// <<< NEW >>> Define the size of our audio batches
+const size_t AUDIO_BATCH_PACKET_COUNT = 50;
 
 // --- Global Objects ---
 Adafruit_LSM6DSOX sox;
 WiFiServer tcpServer(serverPort);
 WiFiClient client;
 
+uint32_t imuPacketCounter = 0;
+
 // --- Binary Packet Structure Definition ---
 const uint8_t PACKET_TYPE_IMU = 0x01;
 const uint8_t PACKET_TYPE_AUDIO = 0x02;
+const uint8_t CMD_REQUEST_IMU = 0x11;
+const uint8_t CMD_REQUEST_AUDIO = 0x22;
 
 #pragma pack(push, 1)
 struct ImuPacket {
     uint8_t type = PACKET_TYPE_IMU;
-    uint32_t timestamp_ms;
+    uint32_t packetIndex;
     float accX, accY, accZ;
     float gyroX, gyroY, gyroZ;
 };
 #pragma pack(pop)
 
 #pragma pack(push, 1)
-struct AudioDataPacket { // <<< NEW COMBINED AUDIO PACKET
+struct AudioDataPacket {
     uint8_t type = PACKET_TYPE_AUDIO;
     uint32_t timestamp_ms;
-    uint16_t num_samples = MIC_AUDIO_CHUNK_SAMPLES; // Should always be this value
-    int32_t samples[MIC_AUDIO_CHUNK_SAMPLES];     // Actual sample data embedded
+    uint16_t num_samples = MIC_AUDIO_CHUNK_SAMPLES;
+    int32_t samples[MIC_AUDIO_CHUNK_SAMPLES];
 };
 #pragma pack(pop)
 
 // --- Data Buffers ---
 std::vector<ImuPacket> imuBuffer;
-std::vector<AudioDataPacket> audioDataBuffer; // <<< SINGLE BUFFER FOR AUDIO
+const size_t IMU_BUFFER_CAPACITY = TARGET_IMU_PACKETS;
 
-// Buffer Capacities
-// IMU: 416 Hz * 1.6 s (approx for 100 audio packets) = 665.6 packets. Add margin.
-const size_t IMU_BUFFER_EXPECTED_CAPACITY = (size_t)(416 * 1.6 * 1.15);         // ~765
-const size_t AUDIO_PACKETS_EXPECTED_CAPACITY = TARGET_AUDIO_PACKETS;            // 100
+// <<< NEW >>> Statically allocate our two large audio buffers for the ping-pong mechanism
+static AudioDataPacket audioBufferA[AUDIO_BATCH_PACKET_COUNT];
+static AudioDataPacket audioBufferB[AUDIO_BATCH_PACKET_COUNT];
 
-// Temporary buffer for I2S reads, remains the same
-int32_t i2s_read_chunk_buffer[MIC_AUDIO_CHUNK_SAMPLES];
+// <<< NEW >>> FreeRTOS objects for concurrent streaming
+QueueHandle_t audioBufferQueue; // This queue will hold POINTERS to the full buffers
+TaskHandle_t audioCollectorTaskHandle;
+TaskHandle_t wifiSenderTaskHandle;
+volatile bool isStreamingAudio = false; // Flag to control the tasks
+
 
 // --- Function Prototypes ---
 void setup_wifi();
 void setup_imu();
 void setup_microphone();
-void sendBufferedData();
+void sendImuData();
 void clearBuffers();
+
+// --- Interrupt Service Routine (ISR) ---
+void IRAM_ATTR imuInterruptHandler() {
+  imuDataReady = true;
+}
+
+void audioCollectorTask(void *pvParameters) {
+    // Start by using Buffer A
+    AudioDataPacket* currentBuffer = audioBufferA;
+
+    for (;;) { // Loop forever
+        if (isStreamingAudio) {
+            // Fill the current buffer with 50 packets
+            for (int i = 0; i < AUDIO_BATCH_PACKET_COUNT; i++) {
+                size_t bytes_read = 0;
+                // Block and wait for a chunk of audio from the I2S driver
+                i2s_read(I2S_PORT_NUM, (void*)currentBuffer[i].samples, 
+                         MIC_AUDIO_CHUNK_SAMPLES * sizeof(int32_t), 
+                         &bytes_read, portMAX_DELAY);
+                
+                // Add a timestamp to this individual packet
+                currentBuffer[i].timestamp_ms = millis();
+            }
+
+            // Now that the buffer is full, send a POINTER to it to the sender task
+            xQueueSend(audioBufferQueue, &currentBuffer, portMAX_DELAY);
+
+            // Immediately switch to the other buffer to start collecting new data (the "pong")
+            // This ensures no gap in collection.
+            if (currentBuffer == audioBufferA) {
+                currentBuffer = audioBufferB;
+            } else {
+                currentBuffer = audioBufferA;
+            }
+
+        } else {
+            vTaskDelay(pdMS_TO_TICKS(100)); // Wait if not streaming
+        }
+    }
+}
+
+// <<< NEW >>> Task 2: The Wi-Fi Sender (Consumer)
+// This task's only job is to wait for a full buffer and send it.
+void wifiSenderTask(void *pvParameters) {
+    AudioDataPacket* bufferToSend; // A pointer to hold the buffer we receive from the queue
+
+    for (;;) { // Loop forever
+        if (isStreamingAudio && client && client.connected()) {
+            // Wait until a pointer to a full buffer appears on the queue
+            if (xQueueReceive(audioBufferQueue, &bufferToSend, portMAX_DELAY) == pdPASS) {
+                // We received a full buffer! Now, send all 50 packets.
+                for (int i = 0; i < AUDIO_BATCH_PACKET_COUNT; i++) {
+                    client.write((const uint8_t*)&bufferToSend[i], sizeof(AudioDataPacket));
+                }
+                Serial.printf("Sent audio batch of %d packets.\n", AUDIO_BATCH_PACKET_COUNT);
+            }
+        } else {
+            vTaskDelay(pdMS_TO_TICKS(100)); // Wait if not streaming or not connected
+        }
+    }
+}
+
 
 // --- Setup Function ---
 void setup() {
     Serial.begin(115200);
     while (!Serial) delay(10);
-    Serial.println("\nESP32-C3 Sensor Server - Combined Audio Packets");
+    Serial.println("\nESP32-C3 Sensor Server - Dual Task Ping-Pong");
 
-    Serial.printf("Initial free heap: %u bytes\n", ESP.getFreeHeap());
-    Serial.printf("Target audio packets: %zu\n", TARGET_AUDIO_PACKETS);
-    Serial.printf("Size of ImuPacket: %zu bytes\n", sizeof(ImuPacket));
-    Serial.printf("Size of AudioDataPacket: %zu bytes\n", sizeof(AudioDataPacket)); // Will be ~1031 bytes
-    
-    // Calculate total expected memory for buffers
-    size_t imu_mem = IMU_BUFFER_EXPECTED_CAPACITY * sizeof(ImuPacket);
-    size_t audio_mem = AUDIO_PACKETS_EXPECTED_CAPACITY * sizeof(AudioDataPacket);
-    Serial.printf("Expected capacities: IMU=%zu (%.1f KB), AudioPackets=%zu (%.1f KB)\n",
-                  IMU_BUFFER_EXPECTED_CAPACITY, imu_mem / 1024.0,
-                  AUDIO_PACKETS_EXPECTED_CAPACITY, audio_mem / 1024.0);
-    Serial.printf("Total expected buffer memory: %.1f KB\n", (imu_mem + audio_mem) / 1024.0);
+    imuBuffer.reserve(IMU_BUFFER_CAPACITY);
 
-
-    imuBuffer.reserve(IMU_BUFFER_EXPECTED_CAPACITY);
-    audioDataBuffer.reserve(AUDIO_PACKETS_EXPECTED_CAPACITY);
-    
-    Serial.printf("Actual reserved capacity: IMU=%zu, AudioDataPackets=%zu\n",
-                  imuBuffer.capacity(), audioDataBuffer.capacity());
-    Serial.printf("Free heap after reserve: %u bytes\n", ESP.getFreeHeap());
-
-    if (imuBuffer.capacity() < IMU_BUFFER_EXPECTED_CAPACITY ||
-        audioDataBuffer.capacity() < AUDIO_PACKETS_EXPECTED_CAPACITY) {
-        Serial.println("!!! WARNING: Buffer reservation failed or partial. May run out of memory. !!!");
-    }
+    pinMode(IMU_INT_PIN, INPUT);
+    attachInterrupt(digitalPinToInterrupt(IMU_INT_PIN), imuInterruptHandler, RISING);
 
     setup_wifi();
     setup_imu();
     setup_microphone();
 
+    // Queue can hold up to 2 pointers (one for each buffer)
+    audioBufferQueue = xQueueCreate(2, sizeof(AudioDataPacket*));
+
+    // Create tasks pinned to Core 0. Let Wi-Fi and other system stuff have Core 1 if needed.
+    // Collector task has higher priority (2) than Sender task (1)
+    xTaskCreatePinnedToCore(audioCollectorTask, "AudioCollector", 4096, NULL, 2, &audioCollectorTaskHandle, 0);
+    xTaskCreatePinnedToCore(wifiSenderTask, "WiFiSender", 4096, NULL, 1, &wifiSenderTaskHandle, 0);
+
     Serial.println("Setup finished. Starting TCP server...");
     tcpServer.begin();
     Serial.printf("TCP server started on port %d\n", serverPort);
-    currentState = WAITING_FOR_CLIENT;
-    Serial.printf("Free heap at start of loop: %u bytes\n", ESP.getFreeHeap());
+    currentState = AWAITING_CONNECTION;
 }
 
 // --- Main Loop ---
 void loop() {
     if (!client || !client.connected()) {
-        if (client && currentState != WAITING_FOR_CLIENT) { Serial.println("Client disconnected."); client.stop(); }
-        currentState = WAITING_FOR_CLIENT;
+        if (client) {
+            Serial.println("Client disconnected.");
+            client.stop();
+            isStreamingAudio = false; // Stop streaming tasks if client disconnects
+        }
+        currentState = AWAITING_CONNECTION;
         client = tcpServer.available();
         if (client) {
-            Serial.printf("New client: %s. Heap: %u\n", client.remoteIP().toString().c_str(), ESP.getFreeHeap());
-            Serial.println("To RECORDING.");
-            clearBuffers();
-            currentState = RECORDING;
+            Serial.printf("New client connected: %s. Heap: %u\n", client.remoteIP().toString().c_str(), ESP.getFreeHeap());
+            Serial.println("--> State: AWAITING_COMMAND");
+            currentState = AWAITING_COMMAND;
         } else {
-            delay(10); return;
+            vTaskDelay(pdMS_TO_TICKS(10)); // Use vTaskDelay in main loop now
+            return;
         }
     }
 
-    if (!client || !client.connected()) { currentState = WAITING_FOR_CLIENT; return; }
-
     switch (currentState) {
-        case RECORDING: {
-            sensors_event_t accel, gyro, temp;
-            if (sox.getEvent(&accel, &gyro, &temp)) {
+        case AWAITING_COMMAND: {
+            isStreamingAudio = false; // Ensure tasks are paused
+            if (client.available() > 0) {
+                uint8_t command = client.read();
+                clearBuffers();
+                if (command == CMD_REQUEST_IMU) {
+                    currentState = STREAMING_IMU;
+                } else if (command == CMD_REQUEST_AUDIO) {
+                    xQueueReset(audioBufferQueue); // Empty the queue before starting
+                    isStreamingAudio = true; // Enable the audio tasks
+                    currentState = STREAMING_AUDIO;
+                    Serial.println("Audio streaming started...");
+                } else {
+                    client.stop();
+                    currentState = AWAITING_CONNECTION;
+                }
+            }
+            break;
+        }
+
+        case STREAMING_IMU: {
+            if (imuDataReady) {
+                imuDataReady = false;
+                sensors_event_t accel, gyro, temp;
+                sox.getEvent(&accel, &gyro, &temp);
                 if (imuBuffer.size() < imuBuffer.capacity()) {
-                    ImuPacket pkt; pkt.timestamp_ms = millis();
+                    ImuPacket pkt;
+                    pkt.packetIndex = ++imuPacketCounter;
                     pkt.accX = accel.acceleration.x; pkt.accY = accel.acceleration.y; pkt.accZ = accel.acceleration.z;
                     pkt.gyroX = gyro.gyro.x; pkt.gyroY = gyro.gyro.y; pkt.gyroZ = gyro.gyro.z;
                     imuBuffer.push_back(pkt);
-                } else { Serial.println("IMU buffer capacity!"); }
-            }
-
-            if (audioDataBuffer.size() < TARGET_AUDIO_PACKETS) {
-                size_t bytes_read = 0;
-                esp_err_t i2s_err = i2s_read(I2S_PORT_NUM, (void *)i2s_read_chunk_buffer,
-                                             MIC_AUDIO_CHUNK_SAMPLES * sizeof(int32_t),
-                                             &bytes_read, pdMS_TO_TICKS(5));
-
-                if (i2s_err == ESP_OK && bytes_read == MIC_AUDIO_CHUNK_SAMPLES * sizeof(int32_t)) {
-                    if (audioDataBuffer.size() < audioDataBuffer.capacity()) {
-                        AudioDataPacket audioPkt;
-                        audioPkt.timestamp_ms = millis();
-                        // audioPkt.num_samples is already MIC_AUDIO_CHUNK_SAMPLES by default
-                        memcpy(audioPkt.samples, i2s_read_chunk_buffer, MIC_AUDIO_CHUNK_SAMPLES * sizeof(int32_t));
-                        audioDataBuffer.push_back(audioPkt);
-                    } else { Serial.println("AudioDataPacket buffer capacity!"); }
-                } else if (i2s_err != ESP_OK && i2s_err != ESP_ERR_TIMEOUT) {
-                    Serial.printf("I2S read error: %d\n", i2s_err);
                 }
             }
-
-            if (audioDataBuffer.size() >= TARGET_AUDIO_PACKETS) {
-                Serial.printf("Target audio packets (%zu) reached. IMU: %zu\n",
-                              TARGET_AUDIO_PACKETS, imuBuffer.size());
-                Serial.println("To SENDING_DATA.");
-                currentState = SENDING_DATA;
+            if (imuBuffer.size() >= TARGET_IMU_PACKETS) {
+                sendImuData();
+                imuBuffer.clear();
             }
             break;
         }
 
-        case SENDING_DATA: {
-            sendBufferedData();
-            if (!client || !client.connected()) { Serial.println("Client lost during send. To WAITING."); currentState = WAITING_FOR_CLIENT; }
-            else {
-                Serial.println("Batch sent. To RECORDING for next batch.");
-                clearBuffers();
-                currentState = RECORDING;
+        case STREAMING_AUDIO: {
+            // The main loop does almost nothing here for audio!
+            // The background tasks are doing all the work.
+            // We just need to check for a new command to stop streaming.
+            if (client.available() > 0) {
+                 Serial.println("Command received, stopping audio stream.");
+                 isStreamingAudio = false;
+                 currentState = AWAITING_COMMAND;
             }
+            // A small delay to prevent this loop from starving other tasks
+            vTaskDelay(pdMS_TO_TICKS(10)); 
             break;
         }
-        case WAITING_FOR_CLIENT: default: delay(10); break;
+        case AWAITING_CONNECTION:
+        default:
+            vTaskDelay(pdMS_TO_TICKS(10));
+            break;
     }
 }
+
+// --- Utility Functions ---
 
 void clearBuffers() {
     imuBuffer.clear();
-    audioDataBuffer.clear();
+    xQueueReset(audioBufferQueue); // Clear the queue instead of a vector
+    imuPacketCounter = 0;
 }
 
-void sendBufferedData() {
-    if (!client || !client.connected()) {
-        Serial.println("Send: Client not connected."); currentState = WAITING_FOR_CLIENT; clearBuffers(); return;
-    }
-
-    Serial.printf("Sending %zu IMU packets...\n", imuBuffer.size());
+void sendImuData() {
+    if (!client || !client.connected()) return;
+    Serial.printf("Sending %zu IMU packets to client...\n", imuBuffer.size());
     for (const auto& packet : imuBuffer) {
-        if (!client.connected()) { Serial.println("Client lost mid-IMU."); clearBuffers(); currentState = WAITING_FOR_CLIENT; return; }
         if (client.write((const uint8_t*)&packet, sizeof(packet)) != sizeof(packet)) {
-            Serial.println("IMU send error."); client.stop(); clearBuffers(); currentState = WAITING_FOR_CLIENT; return;
+            client.stop();
+            return;
         }
     }
-
-    Serial.printf("Sending %zu AudioDataPackets...\n", audioDataBuffer.size());
-    for (const auto& audioPkt : audioDataBuffer) {
-        if (!client.connected()) { Serial.println("Client lost mid-AudioData."); clearBuffers(); currentState = WAITING_FOR_CLIENT; return; }
-        if (client.write((const uint8_t*)&audioPkt, sizeof(audioPkt)) != sizeof(audioPkt)) {
-            Serial.println("AudioDataPacket send error."); client.stop(); clearBuffers(); currentState = WAITING_FOR_CLIENT; return;
-        }
-    }
-    Serial.println("Batch data sent successfully.");
 }
 
-// --- Helper Functions (setup_wifi, setup_imu, setup_microphone) ---
-// These remain largely the same as in the previous version.
-// Ensure IMU_ODR is correctly set in setup_imu.
-void setup_wifi() { /* ... Same as before ... */ 
-    Serial.print("Connecting to WiFi: "); Serial.println(ssid);
-    WiFi.mode(WIFI_STA); WiFi.begin(ssid, password);
-    Serial.print("Connecting");
+// --- Setup Functions (unchanged) ---
+
+void setup_wifi() { 
+    WiFi.mode(WIFI_STA);
+    WiFi.begin(ssid, password);
+    Serial.print("Connecting to WiFi");
     for (int attempts = 0; WiFi.status() != WL_CONNECTED && attempts < 30; attempts++) {
         delay(500); Serial.print(".");
     }
@@ -241,11 +303,11 @@ void setup_wifi() { /* ... Same as before ... */
         Serial.println("\nWiFi connected!");
         Serial.print("IP address: "); Serial.println(WiFi.localIP());
     } else {
-        Serial.println("\nFailed to connect to WiFi. Halting."); while(1) delay(1000);
+        Serial.println("\nFailed to connect. Halting."); while(1) delay(1000);
     }
 }
 
-void setup_imu() { /* ... Same as before, ensuring IMU_ODR = LSM6DS_RATE_416_HZ ... */
+void setup_imu() {
     Serial.println("Setting up IMU (LSM6DSOX)...");
     SPI.begin(IMU_SCK_PIN, IMU_MISO_PIN, IMU_MOSI_PIN, -1);
     if (!sox.begin_SPI(IMU_CS_PIN, &SPI)) {
@@ -254,24 +316,18 @@ void setup_imu() { /* ... Same as before, ensuring IMU_ODR = LSM6DS_RATE_416_HZ 
     Serial.println("LSM6DSOX Found!");
     sox.setAccelRange(LSM6DS_ACCEL_RANGE_16_G);
     sox.setGyroRange(LSM6DS_GYRO_RANGE_2000_DPS);
-    sox.setAccelDataRate(IMU_ODR); 
-    sox.setGyroDataRate(IMU_ODR);  
+    sox.setAccelDataRate(IMU_ODR);
+    sox.setGyroDataRate(IMU_ODR);
     
-    float odr_hz_val;
-    switch(IMU_ODR) {
-        case LSM6DS_RATE_SHUTDOWN: odr_hz_val = 0; break; case LSM6DS_RATE_12_5_HZ: odr_hz_val = 12.5; break;
-        case LSM6DS_RATE_26_HZ: odr_hz_val = 26; break; case LSM6DS_RATE_52_HZ: odr_hz_val = 52; break;
-        case LSM6DS_RATE_104_HZ: odr_hz_val = 104; break; case LSM6DS_RATE_208_HZ: odr_hz_val = 208; break;
-        case LSM6DS_RATE_416_HZ: odr_hz_val = 416; break; 
-        case LSM6DS_RATE_833_HZ: odr_hz_val = 833; break; case LSM6DS_RATE_1_66K_HZ: odr_hz_val = 1660; break;
-        case LSM6DS_RATE_3_33K_HZ: odr_hz_val = 3330; break; case LSM6DS_RATE_6_66K_HZ: odr_hz_val = 6660; break;
-        default: odr_hz_val = -1;
-    }
-    Serial.printf("IMU Config: Accel Range 16G, Gyro Range 2000DPS, ODR ~%.0f Hz\n", odr_hz_val);
+    delay(100);
+    sox.configIntOutputs(false, false);
+    sox.configInt1(false, false, true, false, false);
+    
+    Serial.println("IMU Data Ready Interrupt Enabled on sensor.");
     delay(100);
 }
 
-void setup_microphone() { /* ... Same as before ... */
+void setup_microphone() {
     Serial.println("Setting up Microphone (INMP441)...");
     i2s_config_t i2s_config = {
         .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_RX), .sample_rate = I2S_SAMPLE_RATE,
@@ -284,13 +340,8 @@ void setup_microphone() { /* ... Same as before ... */
         .bck_io_num = I2S_MIC_SERIAL_CLOCK_PIN, .ws_io_num = I2S_MIC_WORD_SELECT_PIN,
         .data_out_num = I2S_PIN_NO_CHANGE, .data_in_num = I2S_MIC_SERIAL_DATA_PIN
     };
-    if (i2s_driver_install(I2S_PORT_NUM, &i2s_config, 0, NULL) != ESP_OK) {
-        Serial.println("Failed to install I2S driver. Halting."); while (1) delay(10);
-    }
-    if (i2s_set_pin(I2S_PORT_NUM, &pin_config) != ESP_OK) {
-        Serial.println("Failed to set I2S pins. Halting."); while (1) delay(10);
-    }
-    delay(200);
+    i2s_driver_install(I2S_PORT_NUM, &i2s_config, 0, NULL);
+    i2s_set_pin(I2S_PORT_NUM, &pin_config);
     i2s_zero_dma_buffer(I2S_PORT_NUM);
     Serial.println("Microphone Setup Complete.");
 }
