@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 2450AT18E0100E
+D Antennas 2.45GHZ CHIP MINI ANTENNA
+K
+F https://www.mouser.co.za/datasheet/2/611/2450AT18E0100-1666847.pdf
+$ENDCMP
+#
+#End Doc Library

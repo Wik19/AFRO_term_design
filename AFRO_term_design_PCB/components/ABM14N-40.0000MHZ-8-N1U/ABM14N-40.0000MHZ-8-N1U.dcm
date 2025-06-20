@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ABM14N-40.0000MHZ-8-N1U
+D 40 MHz +/-10ppm Crystal 8pF 60 Ohms 4-SMD, No Lead , -30C ~ 85C
+K
+F https://abracon.com/datasheets/ABM14N.pdf
+$ENDCMP
+#
+#End Doc Library
