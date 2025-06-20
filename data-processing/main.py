@@ -13,7 +13,7 @@ import os
 import sys 
 
 # --- Configuration ---
-SERVER_IP = "192.168.137.176"  # IMPORTANT: Make sure this is the correct IP of your ESP32
+SERVER_IP = "192.168.137.47"  # IMPORTANT: Make sure this is the correct IP of your ESP32
 SERVER_PORT = 8080
 # LISTEN_DURATION_SECONDS is now set from the command line
 I2S_SAMPLE_RATE = 16000

@@ -12,17 +12,17 @@ const char *password = "4<q984E8";
 const uint16_t serverPort = 8080;
 
 // --- Sensor Pin Definitions ---
-#define IMU_CS_PIN 4
-#define IMU_SCK_PIN 6
-#define IMU_MISO_PIN 2
-#define IMU_MOSI_PIN 5
+#define IMU_CS_PIN 10 //git
+#define IMU_SCK_PIN 6 //git
+#define IMU_MISO_PIN 2 //git
+#define IMU_MOSI_PIN 7 //git
 
-#define I2S_MIC_SERIAL_CLOCK_PIN 10
-#define I2S_MIC_WORD_SELECT_PIN 9
-#define I2S_MIC_SERIAL_DATA_PIN 8
+#define I2S_MIC_SERIAL_CLOCK_PIN 0 // git
+#define I2S_MIC_WORD_SELECT_PIN 1 //git
+#define I2S_MIC_SERIAL_DATA_PIN 3 //git
 
 // --- Interrupt Pin Definition ---
-#define IMU_INT_PIN 3 
+#define IMU_INT_PIN 8 //git 
 volatile bool imuDataReady = false;
 
 // --- Sensor Configuration ---
