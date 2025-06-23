@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TPS63021DSJR
+D High Efficiency Single Inductor Buck-Boost Converter with 4A Switch
+K
+F http://www.ti.com/lit/gpn/tps63021
+$ENDCMP
+#
+#End Doc Library
