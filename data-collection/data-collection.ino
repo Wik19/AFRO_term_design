@@ -22,7 +22,7 @@ const uint16_t serverPort = 8080;
 #define I2S_MIC_SERIAL_DATA_PIN 3 //git
 
 // --- Interrupt Pin Definition ---
-#define IMU_INT_PIN 8 //git 
+#define IMU_INT_PIN 5 //git 
 volatile bool imuDataReady = false;
 
 // --- Sensor Configuration ---
