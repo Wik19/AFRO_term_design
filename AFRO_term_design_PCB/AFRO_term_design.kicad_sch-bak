@@ -10169,7 +10169,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "INMP441:INMP441"
+		(property "Footprint" ""
 			(at 49.53 46.99 0)
 			(effects
 				(font
@@ -10400,7 +10400,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PTS526SK15SMTR2_LFS:PTS526SK15SMTR2LFS"
+		(property "Footprint" ""
 			(at 201.93 161.29 0)
 			(effects
 				(font
@@ -11209,7 +11209,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PTS526SK15SMTR2_LFS:PTS526SK15SMTR2LFS"
+		(property "Footprint" ""
 			(at 203.2 140.97 0)
 			(effects
 				(font
@@ -12294,7 +12294,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "connector_usb_c:2193200001"
+		(property "Footprint" ""
 			(at 48.26 134.62 0)
 			(effects
 				(font
