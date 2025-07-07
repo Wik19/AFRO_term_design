@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LQW2BAS24NG00L
+D LQW2BAS_00 Series Inductor 24nH +/-2% 0805 (2015)
+K
+F https://search.murata.co.jp/Ceramy/image/img/P02/JELF243A-0084.pdf
+$ENDCMP
+#
+#End Doc Library
