@@ -1,4 +1,4 @@
-25613331876481412
+25620339576276163
 2450AT18E0100E
 ANTC3216X130N
 2450AT18E0100E
@@ -60386,8 +60386,8 @@ INMP441
 
 
 0
-9
-2
+8
+1
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height
@@ -95892,6 +95892,13 @@ Integrated Circuit
 0
 15
 15
+TPSnew
+TPS566238RQFR
+TPS566238RQFR-3
+Integrated Circuit
+0
+9
+9
 TerminalBlock
 TerminalBlock_Altech_AK300-2_P5.00mm
 Altech AK300 terminal block, pitch 5.0mm, 45 degree angled, see http://www.mouser.com/ds/2/16/PCBMETRC-24178.pdf
@@ -102696,6 +102703,20 @@ Varistor VF
 0
 2
 2
+cap_47u
+CAPC3216X229N
+1206 (thickness code X)
+Capacitor
+0
+2
+2
+coil_24nH
+LQW2BAN11NG00L
+0805 (2015) T=1.42±0.1mm
+Inductor
+0
+2
+2
 connector_usb_c
 2193200001
 219320-0001-2
@@ -102710,3 +102731,10 @@ drone_connector
 0
 40
 20
+footprints
+RQF0009A
+
+TPS566238RQFR 
+0
+9
+9

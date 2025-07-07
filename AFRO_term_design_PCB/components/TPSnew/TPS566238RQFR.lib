@@ -1,0 +1,30 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model TPS566238RQFR
+#/15991057/1323940/2.50/9/3/Integrated Circuit
+DEF TPS566238RQFR IC 0 30 Y Y 1 F N
+F0 "IC" 1050 300 50 H V L CNN
+F1 "TPS566238RQFR" 1050 200 50 H V L CNN
+F2 "TPS566238RQFR" 1050 100 50 H I L CNN
+F3 "https://www.ti.com/lit/ds/symlink/tps566238.pdf?ts=1674445033157&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS566238%252Fpart-details%252FTPS566238RQFR" 1050 0 50 H I L CNN
+F4 "Switching Voltage Regulators 3-V to 18-V input, 6-A synchronous step-down regulator with forced continuous conduction mode 9-VQFN-HR -40 to 125" 1050 -100 50 H I L CNN "Description"
+F5 "1" 1050 -200 50 H I L CNN "Height"
+F6 "595-TPS566238RQFR" 1050 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPS566238RQFR?qs=stqOd1AaK7%252BIxOvIy4vX6A%3D%3D" 1050 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Texas Instruments" 1050 -500 50 H I L CNN "Manufacturer_Name"
+F9 "TPS566238RQFR" 1050 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X VCC 1 0 0 200 R 50 50 0 0 P
+X FB 2 0 -100 200 R 50 50 0 0 P
+X EN 3 0 -200 200 R 50 50 0 0 P
+X PGND 4 0 -300 200 R 50 50 0 0 P
+X VIN_1 5 0 -400 200 R 50 50 0 0 P
+X VIN_2 6 1200 0 200 L 50 50 0 0 P
+X BST 7 1200 -100 200 L 50 50 0 0 P
+X SW 8 1200 -200 200 L 50 50 0 0 P
+X SS 9 1200 -300 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 1000 100 1000 -500 200 -500 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library
