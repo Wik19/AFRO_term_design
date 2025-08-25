@@ -3598,131 +3598,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+3.3VA"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+3.3VA"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+3.3VA_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3.3VA_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+3V3"
 			(power)
 			(pin_numbers
@@ -4341,6 +4216,12 @@
 		(uuid "06a04c36-8e61-4525-92f3-cd0e39e41082")
 	)
 	(junction
+		(at 209.55 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "098b54e9-685b-4a58-bc4d-63edbfaf995f")
+	)
+	(junction
 		(at 137.16 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4423,12 +4304,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4394493a-5f35-43d1-909c-b6966384b24b")
-	)
-	(junction
-		(at 189.23 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "45989860-c8c6-4737-934f-3fdcc051acfd")
 	)
 	(junction
 		(at 137.16 146.05)
@@ -5485,6 +5360,16 @@
 			(type default)
 		)
 		(uuid "3ce97f6a-b9c0-4bb6-9eb3-94bc6f09635d")
+	)
+	(wire
+		(pts
+			(xy 209.55 60.96) (xy 209.55 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d0b0e6a-89d0-4673-98f5-73f16522fc51")
 	)
 	(wire
 		(pts
@@ -6635,16 +6520,6 @@
 			(type default)
 		)
 		(uuid "a715f40f-8c2c-4e34-834d-c08676a0e8d2")
-	)
-	(wire
-		(pts
-			(xy 189.23 62.23) (xy 189.23 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a80f6778-dfe7-4241-ae60-92b914eb43dc")
 	)
 	(wire
 		(pts
@@ -13824,72 +13699,6 @@
 			(project "AFRO_term_design"
 				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
 					(reference "R10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3VA")
-		(at 189.23 62.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dc64f601-b9d9-41e7-9aa6-b992913b6732")
-		(property "Reference" "#PWR03"
-			(at 189.23 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3VA"
-			(at 189.23 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 189.23 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 189.23 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 189.23 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "de553738-9cf5-4686-8834-6ae298d8e179")
-		)
-		(instances
-			(project "AFRO_term_design"
-				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "#PWR03")
 					(unit 1)
 				)
 			)
