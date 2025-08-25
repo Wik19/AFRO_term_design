@@ -823,6 +823,246 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "APT1608LSECK_J3-PRV:APT1608LSECK_J3-PRV"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LED"
+				(at 12.7 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "APT1608LSECK_J3-PRV"
+				(at 12.7 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "APT1608CGCK"
+				(at 12.7 -93.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.kingbrightusa.com/images/catalog/SPEC/APT1608LSECK-J3-PRV.pdf"
+				(at 12.7 -193.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Description" "Standard LEDs - SMD 1.6X0.8MM RED LOW CURRENT SMD"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "0.75"
+				(at 12.7 -393.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "604-APT1608LSECKJ3RV"
+				(at 12.7 -493.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Kingbright/APT1608LSECK-J3-PRV?qs=6oMev5NRZMFBN%252BbFaEKqAQ%3D%3D"
+				(at 12.7 -593.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Kingbright"
+				(at 12.7 -693.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "APT1608LSECK/J3-PRV"
+				(at 12.7 -793.65 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(symbol "APT1608LSECK_J3-PRV_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 10.16 2.54) (xy 10.16 -2.54) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.334 4.318) (xy 4.572 3.556) (xy 3.81 5.08) (xy 5.334 4.318)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 2.54) (xy 3.81 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.874 4.318) (xy 7.112 3.556) (xy 6.35 5.08) (xy 7.874 4.318)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.89 2.54) (xy 6.35 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 0) (xy 12.7 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "CF_EXP_LEFT_2"
 			(pin_names
 				(offset 1.016)
@@ -1389,189 +1629,6 @@
 					(at 0 -2.54 90)
 					(length 2.032)
 					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Device:LED"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "LED"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Light emitting diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "LED diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "LED_0_1"
-				(polyline
-					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "LED_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4129,16 +4186,6 @@
 		)
 		(uuid "8094aa02-7cae-4852-b816-6056c47ac3c2")
 	)
-	(text "tran"
-		(exclude_from_sim no)
-		(at 42.672 89.662 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "a9aadcc4-ca0d-429c-8406-a159e3a0ef49")
-	)
 	(text "how to \nconnect\nVBUS??"
 		(exclude_from_sim no)
 		(at 70.612 136.144 0)
@@ -4185,9 +4232,9 @@
 		)
 		(uuid "d19034a4-28fd-42cc-90bd-975dbdf97a8b")
 	)
-	(text "LEDs"
+	(text "LED"
 		(exclude_from_sim no)
-		(at 22.606 71.882 0)
+		(at 20.574 71.882 0)
 		(effects
 			(font
 				(size 3.81 3.81)
@@ -4564,12 +4611,6 @@
 		(uuid "e6df5608-5ebb-424c-9a62-ea5cf30d7971")
 	)
 	(junction
-		(at 31.75 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "edb9439d-77a2-4894-b29d-a593f93b6f7c")
-	)
-	(junction
 		(at 59.69 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4823,6 +4864,16 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 86.36) (xy 62.23 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06cd2bf6-ecb0-4275-a5fb-b0a93d87f1a8")
+	)
+	(wire
+		(pts
 			(xy 137.16 156.21) (xy 146.05 156.21)
 		)
 		(stroke
@@ -4830,16 +4881,6 @@
 			(type default)
 		)
 		(uuid "07da098d-4fa2-4973-b9d0-d478d696f7f4")
-	)
-	(wire
-		(pts
-			(xy 43.18 85.09) (xy 43.18 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0895b800-911a-43ef-b246-0382f61a6f8d")
 	)
 	(wire
 		(pts
@@ -4933,16 +4974,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 82.55) (xy 40.64 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "147e8cac-154e-4401-a67b-5121cd3c6db9")
-	)
-	(wire
-		(pts
 			(xy 210.82 68.58) (xy 205.74 68.58)
 		)
 		(stroke
@@ -4970,16 +5001,6 @@
 			(type default)
 		)
 		(uuid "166dd0f9-3df5-4ef3-a2f4-243bd9d04b3c")
-	)
-	(wire
-		(pts
-			(xy 68.58 92.71) (xy 68.58 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "191c56c2-dc53-4083-8c06-cf2005eed908")
 	)
 	(wire
 		(pts
@@ -5013,23 +5034,13 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 92.71) (xy 57.15 95.25)
+			(xy 33.02 86.36) (xy 35.56 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1af81d01-2c60-4400-a43d-ad4c2d78af26")
-	)
-	(wire
-		(pts
-			(xy 43.18 96.52) (xy 43.18 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1afcb4cf-21c6-4f90-b967-7abf08d78e59")
+		(uuid "1bbf958d-ffe1-4dd2-b602-bbb698a2efe2")
 	)
 	(wire
 		(pts
@@ -5133,16 +5144,6 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 81.28) (xy 31.75 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2493cd8c-5b85-4b22-90b2-5ccdd0d107ae")
-	)
-	(wire
-		(pts
 			(xy 280.67 134.62) (xy 280.67 132.08)
 		)
 		(stroke
@@ -5243,16 +5244,6 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 96.52) (xy 31.75 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "31e381a4-0442-4706-9288-fcf553ceb3ad")
-	)
-	(wire
-		(pts
 			(xy 184.15 43.18) (xy 184.15 44.45)
 		)
 		(stroke
@@ -5260,16 +5251,6 @@
 			(type default)
 		)
 		(uuid "335374dd-e589-40a1-84d6-50154bd8bf21")
-	)
-	(wire
-		(pts
-			(xy 31.75 82.55) (xy 31.75 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "335428bb-f984-45fe-8962-c187f4947c17")
 	)
 	(wire
 		(pts
@@ -5963,16 +5944,6 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 90.17) (xy 35.56 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "740b8ea0-75ce-4359-9f4c-d2b3e0096d03")
-	)
-	(wire
-		(pts
 			(xy 57.15 44.45) (xy 59.69 44.45)
 		)
 		(stroke
@@ -6053,17 +6024,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 88.9) (xy 31.75 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7eec5131-d8bd-425b-a1ab-5ba22852a6eb")
-	)
-	(wire
-		(pts
-			(xy 31.75 96.52) (xy 31.75 97.79)
+			(xy 62.23 86.36) (xy 62.23 87.63)
 		)
 		(stroke
 			(width 0)
@@ -6183,16 +6144,6 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 96.52) (xy 43.18 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ce14e00-980b-466f-be4b-92d107eae346")
-	)
-	(wire
-		(pts
 			(xy 113.03 143.51) (xy 114.3 143.51)
 		)
 		(stroke
@@ -6260,16 +6211,6 @@
 			(type default)
 		)
 		(uuid "90aad2ae-3341-471f-a227-20e1a53fc0f6")
-	)
-	(wire
-		(pts
-			(xy 35.56 82.55) (xy 31.75 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "91a04352-d2dd-4842-8cc0-8d4fc9b5bf07")
 	)
 	(wire
 		(pts
@@ -6653,6 +6594,16 @@
 	)
 	(wire
 		(pts
+			(xy 40.64 86.36) (xy 44.45 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6d8a3f5-92ce-49d8-b36a-4caa0eca6aea")
+	)
+	(wire
+		(pts
 			(xy 212.09 135.89) (xy 212.09 138.43)
 		)
 		(stroke
@@ -6660,6 +6611,16 @@
 			(type default)
 		)
 		(uuid "b7da7634-8dfc-4394-8dae-9bd6d849b1fc")
+	)
+	(wire
+		(pts
+			(xy 33.02 85.09) (xy 33.02 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b83d55e3-fc32-47ca-8704-8e3c435873bb")
 	)
 	(wire
 		(pts
@@ -7450,16 +7411,6 @@
 			(justify left bottom)
 		)
 		(uuid "6ae569d2-f73d-4c1f-91e9-3936f3d4022c")
-	)
-	(label "PG"
-		(at 35.56 90.17 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6f865537-895b-4d83-bb3b-02f1d039cc5f")
 	)
 	(label "SDA"
 		(at 85.09 34.29 0)
@@ -8743,8 +8694,8 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 31.75 86.36 0)
-		(mirror y)
+		(at 38.1 86.36 90)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8752,7 +8703,7 @@
 		(dnp no)
 		(uuid "299379fa-71fc-4afe-97b9-5be9c37ab3cc")
 		(property "Reference" "R11"
-			(at 29.21 85.0899 0)
+			(at 36.8299 88.9 0)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -8761,7 +8712,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 29.21 87.6299 0)
+			(at 39.3699 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8770,7 +8721,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 31.75 86.36 0)
+			(at 38.1 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8779,7 +8730,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 31.75 86.36 0)
+			(at 38.1 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8788,7 +8739,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 31.75 86.36 0)
+			(at 38.1 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9150,72 +9101,6 @@
 			(project "AFRO_term_design"
 				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
 					(reference "R13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 68.58 95.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3a8999a4-606e-4d7e-87ca-f774a9315b23")
-		(property "Reference" "#PWR033"
-			(at 68.58 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 68.58 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 68.58 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 68.58 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 68.58 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bce71a6a-caf2-41d3-8678-42a39b59a162")
-		)
-		(instances
-			(project "AFRO_term_design"
-				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -9725,6 +9610,126 @@
 			(project "AFRO_term_design"
 				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "APT1608LSECK_J3-PRV:APT1608LSECK_J3-PRV")
+		(at 59.69 86.36 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "49c0a3e6-258a-4b39-be30-ada1ce71d63f")
+		(property "Reference" "LED1"
+			(at 52.07 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "APT1608LSECK_J3-PRV"
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "APT1608CGCK"
+			(at 46.99 -7.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.kingbrightusa.com/images/catalog/SPEC/APT1608LSECK-J3-PRV.pdf"
+			(at 46.99 -107.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "Standard LEDs - SMD 1.6X0.8MM RED LOW CURRENT SMD"
+			(at 59.69 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.75"
+			(at 46.99 -307.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "604-APT1608LSECKJ3RV"
+			(at 46.99 -407.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Kingbright/APT1608LSECK-J3-PRV?qs=6oMev5NRZMFBN%252BbFaEKqAQ%3D%3D"
+			(at 46.99 -507.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Kingbright"
+			(at 46.99 -607.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "APT1608LSECK/J3-PRV"
+			(at 46.99 -707.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "20d4e26e-3d60-484c-afc1-4162c0a18f80")
+		)
+		(pin "2"
+			(uuid "2b0a7be6-83bd-4da4-ab90-512a2b050eb1")
+		)
+		(instances
+			(project ""
+				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
+					(reference "LED1")
 					(unit 1)
 				)
 			)
@@ -11082,162 +11087,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 68.58 88.9 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7f87f8fc-7e04-4658-b56b-e56f9e542e4b")
-		(property "Reference" "D3"
-			(at 72.39 89.2174 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 72.39 91.7574 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 68.58 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 68.58 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 68.58 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 68.58 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "97282b31-5d88-46bb-9527-561ec8b2703d")
-		)
-		(pin "1"
-			(uuid "1f731ffe-d44f-4e6a-9fce-2c45a7a342fb")
-		)
-		(instances
-			(project "AFRO_term_design"
-				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 38.1 96.52 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "849f30fa-7464-47d7-b0c6-18e7fb7e9928")
-		(property "Reference" "D1"
-			(at 38.1 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R_LED"
-			(at 38.1 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 38.1 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 38.1 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 38.1 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 38.1 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "13db15af-cda7-4319-b299-b05bd496c861")
-		)
-		(pin "1"
-			(uuid "4c39d364-f0b3-4183-803a-8c19f0516558")
-		)
-		(instances
-			(project ""
-				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Sensor_Motion:LSM6DS3")
 		(at 106.68 41.91 0)
 		(unit 1)
@@ -11623,7 +11472,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 31.75 97.79 0)
+		(at 62.23 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11632,7 +11481,7 @@
 		(fields_autoplaced yes)
 		(uuid "8e9d1de9-31de-4ee6-8019-3a116f17a9b9")
 		(property "Reference" "#PWR036"
-			(at 31.75 104.14 0)
+			(at 62.23 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11641,7 +11490,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 31.75 102.87 0)
+			(at 62.23 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11649,7 +11498,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 31.75 97.79 0)
+			(at 62.23 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11658,7 +11507,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 97.79 0)
+			(at 62.23 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11667,7 +11516,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 31.75 97.79 0)
+			(at 62.23 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11682,85 +11531,6 @@
 			(project "AFRO_term_design"
 				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
 					(reference "#PWR036")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 57.15 88.9 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "90f41afe-8b47-4ec7-84c1-067e61c08633")
-		(property "Reference" "D2"
-			(at 60.96 89.2174 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 60.96 91.7574 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 57.15 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 57.15 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 57.15 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3f1caf20-37da-4af9-8169-e09fb790901d")
-		)
-		(pin "1"
-			(uuid "fab29ee1-3c13-497c-8c2e-c1420d7e4f74")
-		)
-		(instances
-			(project "AFRO_term_design"
-				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -12176,7 +11946,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 31.75 81.28 0)
+		(at 33.02 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12185,7 +11955,7 @@
 		(fields_autoplaced yes)
 		(uuid "aae44273-1bce-4f6d-8655-c50686e28110")
 		(property "Reference" "#PWR031"
-			(at 31.75 85.09 0)
+			(at 33.02 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12194,7 +11964,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 31.75 76.2 0)
+			(at 33.02 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12202,7 +11972,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 31.75 81.28 0)
+			(at 33.02 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12211,7 +11981,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 81.28 0)
+			(at 33.02 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12220,7 +11990,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 31.75 81.28 0)
+			(at 33.02 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12303,75 +12073,6 @@
 			(project "AFRO_term_design"
 				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
 					(reference "L2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 38.1 82.55 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b2a425ec-5426-451a-bf23-e0e882f3538c")
-		(property "Reference" "R12"
-			(at 36.8299 80.01 0)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "120"
-			(at 39.3699 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 38.1 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 38.1 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 38.1 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "045f9a74-334d-41c2-a3ba-a9e9f4f5712e")
-		)
-		(pin "2"
-			(uuid "d64fb0cc-165a-4f47-9f48-0c015e8c324e")
-		)
-		(instances
-			(project "AFRO_term_design"
-				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -13149,72 +12850,6 @@
 			(project "AFRO_term_design"
 				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
 					(reference "R15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 57.15 95.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cc6fd80e-2767-42c0-b2c2-72563e0a58d5")
-		(property "Reference" "#PWR032"
-			(at 57.15 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 57.15 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f0922413-8097-4074-9b6b-82627db02f61")
-		)
-		(instances
-			(project "AFRO_term_design"
-				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "#PWR032")
 					(unit 1)
 				)
 			)

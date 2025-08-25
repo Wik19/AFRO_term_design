@@ -10,4 +10,5 @@
   (lib (name "PTS526SK15SMTR2_LFS")(type "KiCad")(uri "${KIPRJMOD}/components/PTS526SK15SMTR2_LFS/PTS526SK15SMTR2_LFS.kicad_sym")(options "")(descr ""))
   (lib (name "TPS566238")(type "KiCad")(uri "${KIPRJMOD}/components/TPSnew/2025-07-04_17-49-49.kicad_sym")(options "")(descr ""))
   (lib (name "TPS566238RQFR")(type "KiCad")(uri "${KIPRJMOD}/components/TPSnew/TPS566238RQFR.kicad_sym")(options "")(descr ""))
+  (lib (name "APT1608LSECK_J3-PRV")(type "KiCad")(uri "${KIPRJMOD}/components/APT1608LSECK_J3-PRB/APT1608LSECK_J3-PRV.kicad_sym")(options "")(descr ""))
 )

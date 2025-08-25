@@ -14,4 +14,5 @@
   (lib (name "footprints")(type "KiCad")(uri "${KIPRJMOD}/components/TPSnew/footprints.pretty")(options "")(descr ""))
   (lib (name "TPSnew")(type "KiCad")(uri "${KIPRJMOD}/components/TPSnew")(options "")(descr ""))
   (lib (name "cap_47u")(type "KiCad")(uri "${KIPRJMOD}/components/cap_47u")(options "")(descr ""))
+  (lib (name "APT1608LSECK_J3-PRB")(type "KiCad")(uri "${KIPRJMOD}/components/APT1608LSECK_J3-PRB")(options "")(descr ""))
 )
