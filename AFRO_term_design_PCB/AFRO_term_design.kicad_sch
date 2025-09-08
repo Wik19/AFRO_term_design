@@ -4264,6 +4264,16 @@
 		)
 		(uuid "4fe2cc52-547e-4a70-8a49-368dda8818ce")
 	)
+	(text "remove"
+		(exclude_from_sim no)
+		(at 238.252 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "52c849f7-e6b4-4040-a073-0d679aefdb6d")
+	)
 	(text "Antenna"
 		(exclude_from_sim no)
 		(at 93.726 71.882 0)
