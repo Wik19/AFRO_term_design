@@ -1,0 +1,27 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model 435151014824
+#/12887301/1323940/2.50/6/3/Switch
+DEF 435151014824 S 0 30 Y Y 1 F N
+F0 "S" 1050 600 50 H V L CNN
+F1 "435151014824" 1050 500 50 H V L CNN
+F2 "435151014824" 1050 400 50 H I L CNN
+F3 "https://componentsearchengine.com/Datasheets/2/435151014824.pdf" 1050 300 50 H I L CNN
+F4 "Tactile Switches WS-TASV Tact Switch" 1050 200 50 H I L CNN "Description"
+F5 "1.4" 1050 100 50 H I L CNN "Height"
+F6 "710-435151014824" 1050 0 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/435151014824?qs=OlC7AqGiEDkCCtReGm3ZVw%3D%3D" 1050 -100 50 H I L CNN "Mouser Price/Stock"
+F8 "Wurth Elektronik" 1050 -200 50 H I L CNN "Manufacturer_Name"
+F9 "435151014824" 1050 -300 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X NO_1 1 500 600 200 D 50 50 0 0 P
+X NO_2 2 600 600 200 D 50 50 0 0 P
+X COM_1 3 500 -700 200 U 50 50 0 0 P
+X COM_2 4 600 -700 200 U 50 50 0 0 P
+X GND_1 5 0 0 200 R 50 50 0 0 P
+X GND_2 6 1200 0 200 L 50 50 0 0 P
+P 5 0 1 6 200 400 1000 400 1000 -500 200 -500 200 400 N
+ENDDRAW
+ENDDEF
+#
+#End Library

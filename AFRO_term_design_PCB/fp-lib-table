@@ -15,4 +15,7 @@
   (lib (name "cap_47u")(type "KiCad")(uri "${KIPRJMOD}/components/cap_47u")(options "")(descr ""))
   (lib (name "APT1608LSECK_J3-PRB")(type "KiCad")(uri "${KIPRJMOD}/components/APT1608LSECK_J3-PRB")(options "")(descr ""))
   (lib (name "PTS647SK38SMTR2N_LFS")(type "KiCad")(uri "${KIPRJMOD}/components/PTS647SK38SMTR2N_LFS")(options "")(descr ""))
+  (lib (name "435151014824")(type "KiCad")(uri "${KIPRJMOD}/components/435151014824")(options "")(descr ""))
+  (lib (name "ABM8-40.000MHZ-B2-T")(type "KiCad")(uri "${KIPRJMOD}/components/ABM8-40.000MHZ-B2-T")(options "")(descr ""))
+  (lib (name "MHQ1005P24NGTD25")(type "KiCad")(uri "${KIPRJMOD}/components/MHQ1005P24NGTD25")(options "")(descr ""))
 )

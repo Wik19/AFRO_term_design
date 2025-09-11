@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MHQ1005P24NGTD25
+D Inductors for high frequency circuits, Multilayer ceramic
+K
+F https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_automotive_high-frequency_mhq1005p_en.pdf
+$ENDCMP
+#
+#End Doc Library

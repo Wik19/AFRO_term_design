@@ -637,38 +637,28 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ABM14N-40_0000MHZ-8-N1U:ABM14N-40.0000MHZ-8-N1U"
+		(symbol "ABM8-40_000MHZ-B2-T:ABM8-40.000MHZ-B2-T"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "Y1"
-				(at 13.97 7.112 0)
+			(property "Reference" "Y2"
+				(at 15.24 7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "ABM14N-40.0000MHZ-8-N1U"
-				(at 13.97 4.572 0)
+			(property "Value" "ABM8-40.000MHZ-B2-T"
+				(at 15.24 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "ABM14N400000MHZ8N1U"
-				(at 29.21 -94.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://abracon.com/datasheets/ABM14N.pdf"
-				(at 29.21 -194.92 0)
+			(property "Footprint" "ABM810000MHZ12D2W"
+				(at 26.67 -94.92 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -677,17 +667,8 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "40 MHz +/-10ppm Crystal 8pF 60 Ohms 4-SMD, No Lead , -30C ~ 85C"
-				(at 0.254 11.176 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "0.3"
-				(at 29.21 -394.92 0)
+			(property "Datasheet" "https://abracon.com/Resonators/abm8.pdf"
+				(at 26.67 -194.92 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -696,8 +677,17 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser Part Number" "815-ABM14N40000Z8N1U"
-				(at 29.21 -494.92 0)
+			(property "Description" "40 MHz +/-20ppm Crystal 18pF 35 Ohms 4-SMD, No Lead"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "0.8"
+				(at 26.67 -394.92 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -706,8 +696,18 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ABRACON/ABM14N-40.0000MHZ-8-N1U?qs=%252BXxaIXUDbq0eaRuYe1fQNg%3D%3D"
-				(at 29.21 -594.92 0)
+			(property "Mouser Part Number" "815-ABM8-40-B2-T"
+				(at 26.67 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ABRACON/ABM8-40.000MHZ-B2-T?qs=zLkLEWnxMJwjgQZ%2FrBjRJg%3D%3D"
+				(at 26.67 -594.92 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -717,7 +717,7 @@
 				)
 			)
 			(property "Manufacturer_Name" "ABRACON"
-				(at 29.21 -694.92 0)
+				(at 26.67 -694.92 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -726,8 +726,8 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer_Part_Number" "ABM14N-40.0000MHZ-8-N1U"
-				(at 29.21 -794.92 0)
+			(property "Manufacturer_Part_Number" "ABM8-40.000MHZ-B2-T"
+				(at 26.67 -794.92 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -736,7 +736,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "ABM14N-40.0000MHZ-8-N1U_1_1"
+			(symbol "ABM8-40.000MHZ-B2-T_1_1"
 				(rectangle
 					(start 5.08 2.54)
 					(end 21.59 -5.08)
@@ -751,7 +751,7 @@
 				(pin passive line
 					(at 0 0 0)
 					(length 5.08)
-					(name "XTAL_2"
+					(name "X2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -769,7 +769,7 @@
 				(pin passive line
 					(at 0 -2.54 0)
 					(length 5.08)
-					(name "XTAL_1"
+					(name "X1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2643,268 +2643,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PTS647SK38SMTR2N_LFS:PTS647SK38SMTR2N_LFS"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "S"
-				(at 12.7 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Value" "PTS647SK38SMTR2N_LFS"
-				(at 12.7 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" "PTS647SM38SMTR2LFS"
-				(at 12.7 -96.19 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.ckswitches.com/media/2567/pts647.pdf"
-				(at 12.7 -196.19 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Description" "Tactile Switch SPST-NO Top Actuated Surface Mount"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "3.8"
-				(at 12.7 -396.19 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" ""
-				(at 12.7 -496.19 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" ""
-				(at 12.7 -596.19 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "C & K COMPONENTS"
-				(at 12.7 -696.19 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "PTS647SK38SMTR2N LFS"
-				(at 12.7 -796.19 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(symbol "PTS647SK38SMTR2N_LFS_1_1"
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -5.08) (xy 2.54 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 5.588 -2.54)
-					(radius 0.508)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.096 -2.286) (xy 8.382 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 9.652 -2.54)
-					(radius 0.508)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -2.54) (xy 12.7 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 -5.08) (xy 12.7 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 0 0 0)
-					(length 2.54)
-					(name "COM_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 0)
-					(length 2.54)
-					(name "COM_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 15.24 0 180)
-					(length 2.54)
-					(name "NO_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 15.24 -5.08 180)
-					(length 2.54)
-					(name "NO_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Sensor_Motion:LSM6DS3"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3235,6 +2973,156 @@
 						)
 					)
 					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Switch:SW_Push"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 -1.524 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Push_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4264,9 +4152,9 @@
 		)
 		(uuid "4fe2cc52-547e-4a70-8a49-368dda8818ce")
 	)
-	(text "remove"
+	(text "remove???"
 		(exclude_from_sim no)
-		(at 238.252 95.25 0)
+		(at 238.252 100.076 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4463,12 +4351,6 @@
 		(uuid "3084613f-ae1f-410d-852a-aba06645fb3e")
 	)
 	(junction
-		(at 213.36 156.21)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "347cc13a-da47-4983-8fcc-ed7054e2d31e")
-	)
-	(junction
 		(at 175.26 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4607,12 +4489,6 @@
 		(uuid "6c34431b-5bf9-451f-95c8-1e3d355ad637")
 	)
 	(junction
-		(at 195.58 156.21)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "74cd9534-c361-4518-9a9e-6ecc2715f039")
-	)
-	(junction
 		(at 30.48 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4653,12 +4529,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a35894df-85e7-4b4d-af0a-4fff4b08a6a9")
-	)
-	(junction
-		(at 196.85 135.89)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a8352181-24b2-4f6f-ad02-24307d0b1f07")
 	)
 	(junction
 		(at 129.54 86.36)
@@ -4743,12 +4613,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d7d3a554-d2cd-46c8-aee9-6661c4a248fc")
-	)
-	(junction
-		(at 217.17 140.97)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d98857af-8365-4680-9109-d4165a8c5295")
 	)
 	(junction
 		(at 184.15 43.18)
@@ -5096,16 +4960,6 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 135.89) (xy 217.17 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f5524d3-e3d6-416f-af09-42767b3302ee")
-	)
-	(wire
-		(pts
 			(xy 121.92 39.37) (xy 128.27 39.37)
 		)
 		(stroke
@@ -5113,6 +4967,16 @@
 			(type default)
 		)
 		(uuid "0fd62573-7fdd-4f5b-a92f-155e5ff0aada")
+	)
+	(wire
+		(pts
+			(xy 208.28 135.89) (xy 217.17 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11391a9c-28b1-444c-83c9-51a1dbfdcd55")
 	)
 	(wire
 		(pts
@@ -5346,7 +5210,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 156.21) (xy 215.9 157.48)
+			(xy 214.63 156.21) (xy 214.63 157.48)
 		)
 		(stroke
 			(width 0)
@@ -5366,7 +5230,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 135.89) (xy 196.85 135.89)
+			(xy 190.5 135.89) (xy 198.12 135.89)
 		)
 		(stroke
 			(width 0)
@@ -5463,26 +5327,6 @@
 			(type default)
 		)
 		(uuid "3a68420c-4cdb-4415-bc47-a7dd131e74d2")
-	)
-	(wire
-		(pts
-			(xy 213.36 161.29) (xy 212.09 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3a74787a-d4ea-4724-a8ff-2777093c8f52")
-	)
-	(wire
-		(pts
-			(xy 196.85 140.97) (xy 196.85 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3aaac4a8-b255-42e4-bbab-a3c9b38bd86c")
 	)
 	(wire
 		(pts
@@ -5696,16 +5540,6 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 140.97) (xy 217.17 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4a566521-12ed-4f9c-9456-6999e2821f37")
-	)
-	(wire
-		(pts
 			(xy 25.4 186.69) (xy 30.48 186.69)
 		)
 		(stroke
@@ -5866,16 +5700,6 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 156.21) (xy 195.58 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d8d7b24-2fb9-41ac-a1d9-8cd904195ad0")
-	)
-	(wire
-		(pts
 			(xy 63.5 44.45) (xy 59.69 44.45)
 		)
 		(stroke
@@ -5956,7 +5780,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 156.21) (xy 195.58 156.21)
+			(xy 187.96 156.21) (xy 198.12 156.21)
 		)
 		(stroke
 			(width 0)
@@ -6156,16 +5980,6 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 156.21) (xy 215.9 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "73c373ce-791b-4c95-91a2-4658bfbe5289")
-	)
-	(wire
-		(pts
 			(xy 57.15 44.45) (xy 59.69 44.45)
 		)
 		(stroke
@@ -6323,16 +6137,6 @@
 			(type default)
 		)
 		(uuid "886e0066-1312-4fb6-85dd-890295e61a54")
-	)
-	(wire
-		(pts
-			(xy 213.36 135.89) (xy 217.17 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8899143a-b438-48e8-9ad5-d5914c75e67a")
 	)
 	(wire
 		(pts
@@ -6666,16 +6470,6 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 135.89) (xy 198.12 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a57e0d5a-f40f-4577-9f3f-3d99cf760f46")
-	)
-	(wire
-		(pts
 			(xy 243.84 142.24) (xy 243.84 143.51)
 		)
 		(stroke
@@ -6746,16 +6540,6 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 156.21) (xy 196.85 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b1998829-2793-4c69-9481-b810c2babfc4")
-	)
-	(wire
-		(pts
 			(xy 110.49 161.29) (xy 113.03 161.29)
 		)
 		(stroke
@@ -6773,16 +6557,6 @@
 			(type default)
 		)
 		(uuid "b24ac3b9-2d3a-4567-bb29-45ea8f7fa652")
-	)
-	(wire
-		(pts
-			(xy 213.36 156.21) (xy 213.36 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b44d9091-8546-4873-b591-4614fb4da91d")
 	)
 	(wire
 		(pts
@@ -6916,16 +6690,6 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 156.21) (xy 212.09 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ba93a2fb-1a96-4cad-a699-d2f01df1c760")
-	)
-	(wire
-		(pts
 			(xy 226.06 27.94) (xy 226.06 35.56)
 		)
 		(stroke
@@ -6963,16 +6727,6 @@
 			(type default)
 		)
 		(uuid "bea89c4b-1c4d-4215-a8cd-2d36a41ae0b2")
-	)
-	(wire
-		(pts
-			(xy 195.58 161.29) (xy 196.85 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c0a3ddc2-f6b0-417f-92ba-6066c49a0626")
 	)
 	(wire
 		(pts
@@ -7196,6 +6950,16 @@
 	)
 	(wire
 		(pts
+			(xy 208.28 156.21) (xy 214.63 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbfe6cdf-e6b4-480f-8b74-3d96ba2da892")
+	)
+	(wire
+		(pts
 			(xy 147.32 218.44) (xy 147.32 219.71)
 		)
 		(stroke
@@ -7336,7 +7100,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 140.97) (xy 217.17 142.24)
+			(xy 217.17 135.89) (xy 217.17 142.24)
 		)
 		(stroke
 			(width 0)
@@ -7373,16 +7137,6 @@
 			(type default)
 		)
 		(uuid "f17e81af-798e-437b-8338-3904cbbcb17f")
-	)
-	(wire
-		(pts
-			(xy 198.12 140.97) (xy 196.85 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f26ae376-5877-4c10-b39b-53099e1ba237")
 	)
 	(wire
 		(pts
@@ -8523,7 +8277,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "coil_24nH:LQW2BAN11NG00L"
+		(property "Footprint" "MHQ1005P24NGTD25:MHQ1005"
 			(at 234.95 25.4 0)
 			(effects
 				(font
@@ -8532,7 +8286,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_automotive_high-frequency_mhq1005p_en.pdf"
 			(at 234.95 25.4 0)
 			(effects
 				(font
@@ -9245,43 +8999,33 @@
 		)
 	)
 	(symbol
-		(lib_id "PTS647SK38SMTR2N_LFS:PTS647SK38SMTR2N_LFS")
-		(at 196.85 156.21 0)
+		(lib_id "ABM8-40_000MHZ-B2-T:ABM8-40.000MHZ-B2-T")
+		(at 252.73 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "35e1613b-eab6-443a-98f2-5df6aef1d947")
-		(property "Reference" "S1"
-			(at 204.47 151.13 0)
+		(uuid "2bda7379-0507-4065-89b1-ba2f3f3546d0")
+		(property "Reference" "Y2"
+			(at 267.97 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "PTS647SK38SMTR2N_LFS"
-			(at 204.47 153.67 0)
+		(property "Value" "ABM8-40.000MHZ-B2-T"
+			(at 267.97 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "PTS647SM38SMTR2LFS"
-			(at 209.55 252.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ckswitches.com/media/2567/pts647.pdf"
-			(at 209.55 352.4 0)
+		(property "Footprint" "ABM810000MHZ12D2W"
+			(at 279.4 227 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9290,17 +9034,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Tactile Switch SPST-NO Top Actuated Surface Mount"
-			(at 196.85 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "3.8"
-			(at 209.55 552.4 0)
+		(property "Datasheet" "https://abracon.com/Resonators/abm8.pdf"
+			(at 279.4 327 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9309,8 +9044,17 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
-			(at 209.55 652.4 0)
+		(property "Description" "40 MHz +/-20ppm Crystal 18pF 35 Ohms 4-SMD, No Lead"
+			(at 252.73 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.8"
+			(at 279.4 527 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9319,8 +9063,8 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" ""
-			(at 209.55 752.4 0)
+		(property "Mouser Part Number" "815-ABM8-40-B2-T"
+			(at 279.4 627 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9329,8 +9073,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "C & K COMPONENTS"
-			(at 209.55 852.4 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ABRACON/ABM8-40.000MHZ-B2-T?qs=zLkLEWnxMJwjgQZ%2FrBjRJg%3D%3D"
+			(at 279.4 727 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9339,8 +9083,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "PTS647SK38SMTR2N LFS"
-			(at 209.55 952.4 0)
+		(property "Manufacturer_Name" "ABRACON"
+			(at 279.4 827 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9349,22 +9093,32 @@
 				(hide yes)
 			)
 		)
-		(pin "4"
-			(uuid "ef7fa22c-cc48-4800-8b79-5c4b76273cb2")
+		(property "Manufacturer_Part_Number" "ABM8-40.000MHZ-B2-T"
+			(at 279.4 927 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
 		)
 		(pin "3"
-			(uuid "3358ba15-b6d7-420c-b739-a77ff9f885ea")
+			(uuid "5fa25c5a-f074-45ef-b9b9-64a9bc42ca33")
 		)
-		(pin "1"
-			(uuid "05933a2a-4490-47d3-953d-90c9b7da8ca9")
+		(pin "4"
+			(uuid "6929dc8e-9161-4c93-b7a3-083b0b8916e5")
 		)
 		(pin "2"
-			(uuid "c885d376-42b3-4914-b168-0bd576aaa1fd")
+			(uuid "9825f7c4-b8a9-4a65-9a11-843f46fb10d9")
+		)
+		(pin "1"
+			(uuid "41fa748e-830d-4a03-9c83-9dd753bd14e9")
 		)
 		(instances
 			(project ""
 				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "S1")
+					(reference "Y2")
 					(unit 1)
 				)
 			)
@@ -10266,6 +10020,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 203.2 156.21 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "50d6a78a-b5f9-4246-a28a-9ab42b4493ab")
+		(property "Reference" "SW2"
+			(at 203.2 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 203.2 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "435151014824:435151014824"
+			(at 203.2 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/435151014824.pdf"
+			(at 203.2 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 203.2 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b8e18761-bc22-456a-bc1e-5b3b71651f29")
+		)
+		(pin "1"
+			(uuid "839ae1a3-c6ed-4e3b-b6e2-b6f24dfe3b63")
+		)
+		(instances
+			(project "AFRO_term_design"
+				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 34.29 52.07 0)
 		(unit 1)
@@ -10678,7 +10500,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 215.9 157.48 0)
+		(at 214.63 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10687,7 +10509,7 @@
 		(fields_autoplaced yes)
 		(uuid "5eb58166-5f32-4f15-9242-c424f43be71b")
 		(property "Reference" "#PWR014"
-			(at 215.9 163.83 0)
+			(at 214.63 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10696,7 +10518,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 215.9 162.56 0)
+			(at 214.63 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10704,7 +10526,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 215.9 157.48 0)
+			(at 214.63 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10713,7 +10535,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 215.9 157.48 0)
+			(at 214.63 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10722,7 +10544,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 215.9 157.48 0)
+			(at 214.63 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12073,131 +11895,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PTS647SK38SMTR2N_LFS:PTS647SK38SMTR2N_LFS")
-		(at 198.12 135.89 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a2fffb7e-971e-43f3-9607-ef3c15b93bd3")
-		(property "Reference" "S2"
-			(at 205.232 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PTS647SK38SMTR2N_LFS"
-			(at 204.978 142.494 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "PTS647SM38SMTR2LFS"
-			(at 210.82 232.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ckswitches.com/media/2567/pts647.pdf"
-			(at 210.82 332.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Tactile Switch SPST-NO Top Actuated Surface Mount"
-			(at 198.12 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "3.8"
-			(at 210.82 532.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 210.82 632.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 210.82 732.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "C & K COMPONENTS"
-			(at 210.82 832.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "PTS647SK38SMTR2N LFS"
-			(at 210.82 932.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "4ed91571-a937-43d7-bc5d-053e966631c1")
-		)
-		(pin "2"
-			(uuid "bbb7ad26-276f-4370-8bf1-3944eac95b3c")
-		)
-		(pin "4"
-			(uuid "801ef3bf-3cc6-4d6a-b543-632f1d2ba0db")
-		)
-		(pin "1"
-			(uuid "3c3f66c6-af31-4aa9-be0a-ac643a1b4170")
-		)
-		(instances
-			(project ""
-				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "S2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 241.3 138.43 0)
 		(unit 1)
@@ -12869,132 +12566,6 @@
 			(project "AFRO_term_design"
 				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
 					(reference "C20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ABM14N-40_0000MHZ-8-N1U:ABM14N-40.0000MHZ-8-N1U")
-		(at 252.73 132.08 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c7a7267c-c428-409e-92f7-750db6a30fbf")
-		(property "Reference" "Y1"
-			(at 266.7 124.968 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "ABM14N-40.0000MHZ-8-N1U"
-			(at 266.7 127.508 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "ABM14N400000MHZ8N1U"
-			(at 281.94 227 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://abracon.com/datasheets/ABM14N.pdf"
-			(at 281.94 327 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "40 MHz +/-10ppm Crystal 8pF 60 Ohms 4-SMD, No Lead , -30C ~ 85C"
-			(at 252.984 120.904 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.3"
-			(at 281.94 527 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "815-ABM14N40000Z8N1U"
-			(at 281.94 627 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ABRACON/ABM14N-40.0000MHZ-8-N1U?qs=%252BXxaIXUDbq0eaRuYe1fQNg%3D%3D"
-			(at 281.94 727 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "ABRACON"
-			(at 281.94 827 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "ABM14N-40.0000MHZ-8-N1U"
-			(at 281.94 927 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "d82d1550-70f9-4011-9e41-d9eab93d8157")
-		)
-		(pin "2"
-			(uuid "e5f3ef25-4eb2-4883-b08a-7c011a21e524")
-		)
-		(pin "3"
-			(uuid "9b7e1824-def1-4285-8efc-149ce23a5631")
-		)
-		(pin "1"
-			(uuid "1135e72a-acaa-4a4a-8cd1-883b9c4534f5")
-		)
-		(instances
-			(project ""
-				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
-					(reference "Y1")
 					(unit 1)
 				)
 			)
@@ -14390,6 +13961,74 @@
 			(project "AFRO_term_design"
 				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
 					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 203.2 135.89 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f9f3a251-d147-427b-b3e4-e79589643744")
+		(property "Reference" "SW1"
+			(at 203.2 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 203.2 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "435151014824:435151014824"
+			(at 203.2 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/435151014824.pdf"
+			(at 203.2 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 203.2 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d3217e6f-c28f-464d-91f6-1f50f7de3b59")
+		)
+		(pin "1"
+			(uuid "c48d7354-a004-4874-8850-08bffa1509cf")
+		)
+		(instances
+			(project ""
+				(path "/64ae932c-e667-48f3-b88a-5342485e35f4"
+					(reference "SW1")
 					(unit 1)
 				)
 			)
