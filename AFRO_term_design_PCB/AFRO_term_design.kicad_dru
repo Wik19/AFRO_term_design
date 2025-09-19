@@ -1,0 +1,5 @@
+(version 1)
+(rule "Antenna Trace Clearance"
+	(condition "A.NetName == 'Net-(C17-Pad1)'")
+	(constraint clearance (min 0.4mm))
+)
