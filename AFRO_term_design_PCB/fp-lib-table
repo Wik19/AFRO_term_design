@@ -18,4 +18,5 @@
   (lib (name "435151014824")(type "KiCad")(uri "${KIPRJMOD}/components/435151014824")(options "")(descr ""))
   (lib (name "ABM8-40.000MHZ-B2-T")(type "KiCad")(uri "${KIPRJMOD}/components/ABM8-40.000MHZ-B2-T")(options "")(descr ""))
   (lib (name "MHQ1005P24NGTD25")(type "KiCad")(uri "${KIPRJMOD}/components/MHQ1005P24NGTD25")(options "")(descr ""))
+  (lib (name "MLG1005S1N2BTD25")(type "KiCad")(uri "${KIPRJMOD}/components/MLG1005S1N2BTD25")(options "")(descr ""))
 )

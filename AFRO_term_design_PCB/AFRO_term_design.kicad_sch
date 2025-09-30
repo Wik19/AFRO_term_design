@@ -14172,7 +14172,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MHQ0402PSA1N2CT000:INDC0402X26N"
+		(property "Footprint" "MLG1005S1N2BTD25:MLG1005"
 			(at 106.68 83.82 0)
 			(effects
 				(font
@@ -14181,7 +14181,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.mouser.pl/ProductDetail/TDK/MLG1005S1N2BTD25?qs=u4%252BEJ9urDARF5PnqAQUamg%3D%3D"
 			(at 106.68 83.82 0)
 			(effects
 				(font

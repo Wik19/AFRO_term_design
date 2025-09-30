@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MLG1005S1N2BTD25
+D Unshielded Multilayer Inductor 1A x 0402 (1005 Metric)
+K
+F https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_automotive_high-frequency_mlg1005s_en.pdf
+$ENDCMP
+#
+#End Doc Library
