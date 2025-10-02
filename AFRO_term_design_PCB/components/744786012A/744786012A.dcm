@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 744786012A
+D 1.2 nH Unshielded Multilayer Inductor 600 mA 50mOhm Max 0603 (1608 Metric)
+K
+F https://www.we-online.com/katalog/datasheet/744786012A.pdf
+$ENDCMP
+#
+#End Doc Library
